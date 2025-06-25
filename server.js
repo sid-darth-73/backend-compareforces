@@ -7,7 +7,7 @@ dotenv.config();
 
 const app = express();
 const corsOptions = {
-  origin: 'https://compare-forces.vercel.app/', 
+  origin: 'https://compare-forces.vercel.app', 
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', 
   credentials: true,
   optionsSuccessStatus: 200 
