@@ -6,7 +6,13 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 dotenv.config();
 
 const app = express();
-app.use(cors());
+const corsOptions = {
+  origin: 'https://compare-forces.vercel.app/', 
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', 
+  credentials: true,
+  optionsSuccessStatus: 200 
+}
+app.use(cors(corsOptions));
 app.use(express.json());
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
